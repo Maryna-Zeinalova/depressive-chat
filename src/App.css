@@ -1,0 +1,44 @@
+.chatFrame {
+  height: 80%;
+  width: 60%;
+  border: 5px solid #385170;
+  background: #142d4c;
+  border-radius: 10px;
+  padding: 25px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+form {
+  display: flex;
+  justify-content: space-between;
+  border-top: 5px solid #ececec;
+  padding-top: 10px;
+  position: absolute;
+  bottom: 25px;
+  left: 5%;
+  width: 90%;
+}
+input,
+select,
+button,
+.message {
+  border: 1px solid #385170;
+  border-radius: 4px;
+  font-size: 18px;
+  line-height: 24px;
+}
+input {
+  width: 60%;
+}
+select,
+button {
+  width: 20%;
+}
+.message {
+  color: #ececec;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 10px;
+}
