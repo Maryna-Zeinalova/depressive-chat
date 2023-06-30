@@ -3,7 +3,7 @@ import './App.css';
 
 function App() {
   const [sentence, setSentence] = useState('');
-  const [sender, setSender] = useState('');
+  const [sender, setSender] = useState('John');
   const [messageThread, setMessageThread] = useState([]);
 
   const onInput = (e) => setSentence(e.target.value);
@@ -15,16 +15,34 @@ function App() {
         .map((element) => (
           <div className='message'>
             <p>{element.sentence}</p>
-            <p>{element.sender}</p>
+            <p>
+              <img
+                className='avatar'
+                src={`img/${element.sender}.jpg`}
+                alt='avatar'
+              />
+              {element.sender}
+            </p>
+            <p>{element.time}</p>
           </div>
         ))}
 
       <form
         onSubmit={(e) => {
           e.preventDefault();
+
+          const today = new Date();
+          const time =
+            today.getHours() +
+            ':' +
+            today.getMinutes() +
+            ':' +
+            today.getSeconds();
+
           const newMessage = {
             sentence,
             sender,
+            time,
           };
           setMessageThread(() => {
             return [...messageThread, newMessage];
@@ -43,7 +61,6 @@ function App() {
             setSender(e.target.value);
           }}
         >
-          <option value='anonimus'>Who from</option>
           <option value='John'>John</option>
           <option value='David'>David</option>
           <option value='Donna'>Donna</option>
