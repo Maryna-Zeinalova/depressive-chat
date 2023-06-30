@@ -36,9 +36,22 @@ select,
 button {
   width: 20%;
 }
+button:hover {
+  cursor: pointer;
+  border-color: white;
+}
+button:active {
+  color: #ececec;
+  background-color: #385170;
+}
 .message {
   color: #ececec;
   display: flex;
   justify-content: space-between;
   padding: 0 10px;
+}
+
+.avatar {
+  height: 30px;
+  width: 30px;
 }
